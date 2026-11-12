@@ -1,0 +1,255 @@
+:root {
+  color-scheme: light;
+  --paper: #f9f7f1;
+  --ink: #22302a;
+  --muted: #516158;
+  --accent: #2d5c4b;
+  --rule: #d5dcd1;
+  --display: "Crimson Text", Georgia, serif;
+  --body: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1.125rem/1.65 var(--body);
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: .18em;
+  text-decoration-thickness: .06em;
+}
+
+a:hover {
+  text-decoration-thickness: .12em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: min(68rem, calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  left: 1rem;
+  padding: .45rem .85rem;
+  background: var(--paper);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  padding-block: 1rem;
+}
+
+.wordmark {
+  color: var(--ink);
+  font: 600 1.65rem/1.2 var(--display);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem clamp(1.05rem, 3vw, 2.1rem);
+}
+
+.site-nav a {
+  padding-block: .35rem;
+  color: var(--muted);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: .45em;
+}
+
+main {
+  flex: 1 0 auto;
+  padding-block: clamp(2.75rem, 8vw, 6rem);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(3.45rem, 8vw, 6.4rem);
+  letter-spacing: -.045em;
+}
+
+h2 {
+  font-size: clamp(1.95rem, 4vw, 2.65rem);
+  letter-spacing: -.025em;
+}
+
+h3 {
+  font-size: 1.55rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: 1.1rem clamp(2rem, 6vw, 6rem);
+}
+
+.intro p {
+  margin: .35rem 0 0;
+  max-width: 34em;
+  font-size: clamp(1.14rem, 2vw, 1.34rem);
+}
+
+.portrait {
+  margin: clamp(1.8rem, 5vw, 3.25rem) 0 0;
+  padding: .42rem;
+  border: 1px solid var(--rule);
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-title {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.research-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 12rem;
+  gap: clamp(2rem, 7vw, 6rem);
+}
+
+.page-jump {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  display: grid;
+  gap: .4rem;
+  padding: .5rem 0 .5rem 1.15rem;
+  border-left: 1px solid var(--rule);
+  font-size: 1rem;
+}
+
+.content {
+  max-width: 49rem;
+  min-width: 0;
+}
+
+.content section {
+  scroll-margin-top: 1.5rem;
+}
+
+.content section + section,
+.course + .course {
+  margin-top: 2.1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.content h3 {
+  margin-top: 1.2rem;
+}
+
+.content p {
+  margin-block: .65rem 0;
+}
+
+.content ul {
+  margin-block: .8rem 0;
+  padding-left: 1.35rem;
+}
+
+.content li + li {
+  margin-top: .62rem;
+}
+
+.content li::marker {
+  color: var(--accent);
+}
+
+.course > p:first-child {
+  margin-top: 0;
+}
+
+.course > p:first-child a {
+  font-weight: 650;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.site-footer .wrap {
+  padding-block: 1.15rem;
+}
+
+@media (max-width: 52rem) {
+  .research-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8rem;
+  }
+
+  .page-jump {
+    grid-column: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.15rem;
+  }
+}
+
+@media (max-width: 42rem) {
+  .wrap {
+    width: calc(100% - 2rem);
+  }
+
+  .masthead {
+    row-gap: .45rem;
+  }
+
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
