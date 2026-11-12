@@ -139,7 +139,8 @@ h3 {
 }
 
 .portrait {
-  margin: clamp(1.8rem, 5vw, 3.25rem) 0 0;
+  width: min(85%, 42rem);
+  margin: clamp(1.8rem, 5vw, 3.25rem) auto 0;
   padding: .42rem;
   border: 1px solid var(--rule);
 }
