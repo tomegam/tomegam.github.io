@@ -10,4 +10,4 @@ The site runs on GitHub Pages from the root of the `main` branch. It uses plain 
 
 To preview a change, open `index.html` in a browser. Commit the edited files to `main` to publish the update.
 
-The research and teaching pages link directly to the PDFs in `files/`. The physics papers link to Google Drive.
+The research and teaching pages link directly to the PDFs in `files/`.
